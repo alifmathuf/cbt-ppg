@@ -34,6 +34,16 @@ function tampilSoal(){
   });
 }
 
+function updateProgress(){
+  const total = soal.length;
+  const answered = Object.keys(jawaban).length;
+  const percent = Math.round((answered/total)*100);
+
+  document.getElementById("progressFill").style.width = percent + "%";
+  document.getElementById("progressText").innerText =
+    percent + "% selesai";
+}
+
 function nextSoal(){
   if(current < soal.length-1){
     current++;
