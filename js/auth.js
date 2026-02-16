@@ -1,108 +1,63 @@
 /* ===============================
-   AUTH MODULE - STABLE VERSION
+   AUTH SYSTEM - CLEAN VERSION
 ================================ */
 
-const Auth = {
-
-  login(nama, kelas){
-
-    const userId = generateUserId(nama, kelas);
-
-    const userData = {
-      id: userId,
-      nama: nama,
-      kelas: kelas,
-      loginAt: Date.now()
-    };
-
-    // 1️⃣ SIMPAN LOCAL (WAJIB)
-    localStorage.setItem("cbtUser", JSON.stringify(userData));
-
-    // 2️⃣ COBA SIMPAN FIREBASE (TIDAK BOLEH BLOK LOGIN)
-    try{
-      if(typeof firebase !== "undefined" && typeof database !== "undefined"){
-        database.ref("users/" + userId).set({
-          nama: nama,
-          kelas: kelas,
-          lastLogin: Date.now()
-        });
-      }
-    }catch(err){
-      console.log("Firebase skip:", err);
-    }
-
-  },
-
-  logout(){
-    localStorage.removeItem("cbtUser");
-    window.location.href = "index.html";
-  },
-
-  isLoggedIn(){
-    return !!localStorage.getItem("cbtUser");
-  },
-
-  getUser(){
-    return JSON.parse(localStorage.getItem("cbtUser"));
-  },
-
-  protect(){
-    if(!this.isLoggedIn()){
-      window.location.href = "index.html";
-    }
-  },
-
-  autoRedirect(){
-    if(this.isLoggedIn()){
-      window.location.href = "dashboard.html";
-    }
-  }
-
-};
-
-
-/* ===============================
-   GENERATE USER ID
-================================ */
-
-function generateUserId(nama, kelas){
-  return (
-    nama.replace(/\s+/g,"").toLowerCase() +
-    "_" +
-    kelas.replace(/\s+/g,"").toLowerCase()
-  );
+// simpan user
+function saveUser(user){
+  localStorage.setItem("cbtUser", JSON.stringify(user));
 }
 
+// ambil user
+function getUser(){
+  return JSON.parse(localStorage.getItem("cbtUser"));
+}
 
-/* ===============================
-   GLOBAL LOGIN FUNCTION
-================================ */
+// cek login
+function isLoggedIn(){
+  return !!localStorage.getItem("cbtUser");
+}
 
-function login(){
+// logout
+function logout(){
+  localStorage.removeItem("cbtUser");
+  window.location.href = "login.html";
+}
+
+// fungsi login utama
+function doLogin(){
 
   const nama = document.getElementById("nama").value.trim();
   const kelas = document.getElementById("kelas").value.trim();
 
   if(!nama || !kelas){
-    alert("Nama dan kelas wajib diisi");
+    alert("Nama dan mapel wajib diisi");
     return;
   }
 
-  Auth.login(nama, kelas);
+  const user = {
+    id: Date.now(),
+    nama: nama,
+    kelas: kelas,
+    loginAt: Date.now()
+  };
 
-  // Redirect HARUS selalu jalan
+  saveUser(user);
+
+  // pindah ke dashboard
   window.location.href = "dashboard.html";
 }
-async function isAdmin(){
-  const user = JSON.parse(localStorage.getItem("user"));
-  if(!user) return false;
 
-  const snap = await firebase.database()
-    .ref("admins")
-    .orderByChild("email")
-    .equalTo(user.email)
-    .once("value");
+// pasang event tombol
+document.addEventListener("DOMContentLoaded", () => {
 
-  return snap.exists();
-}
+  const btn = document.getElementById("loginBtn");
+  if(btn){
+    btn.addEventListener("click", doLogin);
+  }
 
+  // auto redirect jika sudah login
+  if(isLoggedIn()){
+    window.location.href = "dashboard.html";
+  }
+
+});
