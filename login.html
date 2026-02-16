@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login CBT</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login CBTWeb</title>
 
-<link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/inti.css">
 </head>
 <body>
 
-<div class="login-wrapper">
+<div class="auth-container">
 
-  <div class="login-brand">
-    <h1>TRY OUT PPG</h1>
-    <p>Masuk untuk memulai ujian</p>
-  </div>
+  <div class="auth-card">
 
-  <div class="login-form-area">
-    <div class="login-card">
+    <h2>CBTWeb</h2>
+    <p class="subtitle">Silakan login untuk melanjutkan</p>
 
-      <h2>Login Peserta</h2>
+    <form id="loginForm">
 
-      <div class="input-group">
-        <label>Nama Lengkap</label>
-        <input type="text" id="nama">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" placeholder="Masukkan username" required>
       </div>
 
-      <div class="input-group">
-        <label>Mapel</label>
-        <input type="text" id="kelas">
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="Masukkan password" required>
       </div>
 
-      <button class="btn-login" id="loginBtn">
-        Masuk
-      </button>
+      <button class="btn-primary" type="submit">Login</button>
 
-    </div>
+    </form>
+
   </div>
 
 </div>
 
 <script src="js/auth.js"></script>
-
 </body>
 </html>
