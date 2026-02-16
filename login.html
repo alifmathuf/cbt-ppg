@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Tryout PPG</title>
+
+<link rel="icon" type="image/svg+xml" href="assets/logo-uin.svg">
+<link rel="shortcut icon" href="assets/logo-uin.svg">
+
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+
+<div class="login-wrapper">
+
+  <!-- BRANDING -->
+  <div class="login-brand">
+    <img src="assets/logo.png" alt="Logo">
+    <h1>TRY OUT PPG</h1>
+    <p>Kumpulan soal Try Out PPG Batch IV UIN Syarif Hidayatullah Jakarta</p>
+    <p>Terima kasih kepada panitia & Prodi PPG UIN Jakarta</p>
+  </div>
+
+  <!-- FORM -->
+  <div class="login-form-area">
+    <div class="login-card">
+
+      <h2>Login Peserta</h2>
+
+      <div class="input-group">
+        <label>Nama Lengkap</label>
+        <input type="text" id="nama" placeholder="Masukkan nama">
+      </div>
+
+      <div class="input-group">
+        <label>Mapel PPG</label>
+        <input type="text" id="kelas" placeholder="Ketik mapel PPG">
+      </div>
+
+      <button class="btn-login" onclick="login()">
+        Masuk
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  © 2026 Koorlas SKI Batch IV PPG UIN Jakarta
+</footer>
+
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyDPU...",
+  authDomain: "cbtuin-d26aa.firebaseapp.com",
+  databaseURL: "https://cbtuin-d26aa-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "cbtuin-d26aa",
+};
+
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+</script>
+
+<!-- CORE AUTH -->
+<script src="js/core.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // tekan ENTER untuk login
+  document.addEventListener("keypress", e => {
+    if (e.key === "Enter") login();
+  });
+
+  // auto redirect jika sudah login
+  if (typeof Auth !== "undefined") {
+    Auth.autoRedirect();
+  }
+
+});
+</script>
+
+</body>
+</html>
