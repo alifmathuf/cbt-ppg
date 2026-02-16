@@ -42,3 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
+
+if(localStorage.getItem("cbtLogin") !== "true"){
+  window.location.href = "login.html";
+}
