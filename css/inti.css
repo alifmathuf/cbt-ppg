@@ -28,29 +28,15 @@ body{
 ========================= */
 :root{
 
-  /* primary palette */
-  --blue-dark:#0f172a;
-  --blue-soft:#111c44;
-  --blue-light:#1f2a5a;
-
-  /* accent */
-  --accent:#2563eb;
-  --accent-hover:#1d4ed8;
-
-  /* backgrounds */
-  --bg-primary:#0f172a;
-  --bg-secondary:#111c44;
-
-  /* text */
-  --text-primary:#e5e7eb;
-  --text-soft:#94a3b8;
-
-  /* ui */
-  --radius:12px;
-  --radius-sm:8px;
-  --shadow-soft:0 10px 25px rgba(0,0,0,0.25);
-
-  --transition: all .25s ease;
+:root{
+  --bg-primary:#071a12;      /* background utama */
+  --bg-secondary:#0d2b22;    /* navbar & sidebar */
+  --card:#0f3328;            /* card */
+  --accent:#1f7a63;          /* aksen utama */
+  --accent-soft:#2fa98a;     /* hover */
+  --text-light:#e8f5f1;
+  --shadow:0 10px 25px rgba(0,0,0,.25);
+  --transition:.2s;
 }
 
 /* =========================
