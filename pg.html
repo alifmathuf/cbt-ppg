@@ -1,68 +1,55 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ujian Pilihan Ganda</title>
+<div class="exam-container">
 
-<link rel="stylesheet" href="css/inti.css">
-<link rel="stylesheet" href="css/ujian.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<!-- NAVBAR EXAM -->
-<header class="exam-navbar">
-  <div class="exam-title">Ujian Pilihan Ganda</div>
-  <div id="timer" class="timer-badge">120:00</div>
-</header>
-
-<!-- MAIN CONTENT -->
-<main class="exam-container">
-  <main class="exam-layout">
-
-  <div class="exam-main">
-    <!-- QUESTION CARD tetap -->
+  <!-- PROGRESS -->
+  <div class="progress-wrapper">
+    <div class="progress-top">
+      <span>Soal 1 dari 40</span>
+      <span>10%</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
   </div>
 
-  <aside class="exam-nav">
-    <div class="nav-title">Navigasi Soal</div>
-    <div id="numberGrid" class="number-grid"></div>
+  <div class="exam-body">
 
-    <div class="progress-box">
-      <div class="progress-bar">
-        <div id="progressFill" class="progress-fill"></div>
+    <!-- SOAL -->
+    <div class="question-area">
+
+      <div class="question-card">
+        <div class="q-number">Soal 1</div>
+        <div class="q-text">
+          Isi pertanyaan tampil di sini. Pastikan teks panjang tetap nyaman dibaca.
+        </div>
+
+        <label class="option">
+          <input type="radio" name="q1"> Pilihan A
+        </label>
+        <label class="option">
+          <input type="radio" name="q1"> Pilihan B
+        </label>
+        <label class="option">
+          <input type="radio" name="q1"> Pilihan C
+        </label>
+        <label class="option">
+          <input type="radio" name="q1"> Pilihan D
+        </label>
+
       </div>
-      <div id="progressText" class="progress-text">0% selesai</div>
-    </div>
-  </aside>
 
-</main>
-
-  <!-- QUESTION CARD -->
-  <section class="question-card">
-    <div class="question-number">
-      Soal <span id="no">1</span> dari 50
     </div>
 
-    <div id="question" class="question-text">
-      Memuat soal...
+    <!-- NAVIGASI -->
+    <div class="nav-area">
+      <div class="nav-title">Navigasi</div>
+      <div class="nav-grid">
+        <button class="active">1</button>
+        <button class="answered">2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+      </div>
     </div>
 
-    <div id="options" class="options"></div>
-
-    <div class="nav-buttons">
-      <button onclick="prevSoal()">Sebelumnya</button>
-      <button onclick="nextSoal()">Berikutnya</button>
-    </div>
-  </section>
-
-  <!-- NUMBER GRID -->
-  <section class="number-grid" id="numberGrid"></section>
-
-</main>
-
-<script src="js/ujian.js"></script>
-</body>
-</html>
+  </div>
+</div>
