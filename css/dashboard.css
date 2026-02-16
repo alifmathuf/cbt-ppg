@@ -1,146 +1,61 @@
-/* =================================
-   DASHBOARD LAYOUT & CONTENT
-================================= */
-
-/* ===== STEPPER NAVIGATION ===== */
-
+/* ===== STEPPER ===== */
 .stepper{
   display:flex;
-  align-items:center;
-  justify-content:space-between;
+  gap:14px;
   margin-bottom:24px;
 }
 
 .step{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:14px;
-  color:var(--text-secondary);
+  flex:1;
+  padding:12px;
+  text-align:center;
+  border-radius:var(--radius-sm);
+  background:var(--bg-secondary);
+  font-size:13px;
 }
 
 .step.active{
-  color:var(--accent);
-  font-weight:600;
+  background:var(--primary);
+  color:#fff;
 }
-
-.progress-line{
-  flex:1;
-  height:3px;
-  background:var(--border);
-  margin:0 8px;
-  border-radius:2px;
-  overflow:hidden;
-}
-
-.progress-line span{
-  display:block;
-  height:100%;
-  width:0%;
-  background:var(--accent);
-  transition:0.3s;
-}
-
-#stepContent{
-  margin-top:20px;
-}
-
 
 /* ===== OPTION SELECTOR ===== */
-
 .option-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:14px;
 }
 
 .option-item{
-  background:var(--bg-secondary);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:18px;
+  padding:16px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border-soft);
+  background:var(--bg-card);
   cursor:pointer;
-  transition:var(--transition);
 }
 
 .option-item:hover{
-  border-color:var(--accent);
-  transform:translateY(-2px);
+  background:var(--bg-hover);
 }
 
 .option-item.active{
-  border-color:var(--accent);
-  background:rgba(59,130,246,0.08);
+  border-color:var(--primary);
+  background:var(--bg-hover);
 }
 
-
-/* ===== ACCORDION (PAKET / MODE) ===== */
-
-.accordion{
-  border-radius:var(--radius);
-  overflow:hidden;
-  border:1px solid var(--border);
+/* ===== ACCORDION ===== */
+.accordion-item{
+  border-bottom:1px solid var(--border-soft);
 }
 
 .accordion-header{
-  padding:14px 16px;
-  cursor:pointer;
-  background:var(--bg-secondary);
+  padding:14px 0;
   font-weight:600;
+  cursor:pointer;
 }
 
-.accordion-content{
-  display:none;
-  padding:16px;
-  background:var(--bg-primary);
-}
-
-.accordion.open .accordion-content{
-  display:block;
-}
-
-
-/* ===== STATISTICS ===== */
-
-.stat-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:16px;
-  margin-top:24px;
-}
-
-.stat-card{
-  background:var(--bg-secondary);
-  border-radius:var(--radius);
-  padding:18px;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow-soft);
-}
-
-.stat-value{
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:4px;
-}
-
-.stat-label{
-  font-size:13px;
+.accordion-body{
+  padding-bottom:14px;
   color:var(--text-secondary);
-}
-
-
-/* ===== CHART CARD ===== */
-
-.chart-card{
-  margin-top:24px;
-  background:var(--bg-secondary);
-  border-radius:var(--radius);
-  padding:18px;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow-soft);
-}
-
-.chart-card canvas{
-  width:100% !important;
-  height:260px !important;
+  font-size:14px;
 }
