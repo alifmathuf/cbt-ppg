@@ -1,55 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ujian Pilihan Ganda</title>
+
+<link rel="stylesheet" href="css/inti.css">
+<link rel="stylesheet" href="css/ujian.css?v=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="exam-top">
+  <div class="exam-title">Ujian Online</div>
+  <div class="exam-timer" id="timer">120:00</div>
+</header>
+
 <div class="exam-container">
 
-  <!-- PROGRESS -->
-  <div class="progress-wrapper">
-    <div class="progress-top">
-      <span>Soal 1 dari 40</span>
-      <span>10%</span>
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
-  </div>
+  <!-- MAIN CONTENT -->
+  <main class="exam-main">
 
-  <div class="exam-body">
-
-    <!-- SOAL -->
-    <div class="question-area">
-
-      <div class="question-card">
-        <div class="q-number">Soal 1</div>
-        <div class="q-text">
-          Isi pertanyaan tampil di sini. Pastikan teks panjang tetap nyaman dibaca.
-        </div>
-
-        <label class="option">
-          <input type="radio" name="q1"> Pilihan A
-        </label>
-        <label class="option">
-          <input type="radio" name="q1"> Pilihan B
-        </label>
-        <label class="option">
-          <input type="radio" name="q1"> Pilihan C
-        </label>
-        <label class="option">
-          <input type="radio" name="q1"> Pilihan D
-        </label>
-
-      </div>
-
-    </div>
-
-    <!-- NAVIGASI -->
-    <div class="nav-area">
-      <div class="nav-title">Navigasi</div>
-      <div class="nav-grid">
-        <button class="active">1</button>
-        <button class="answered">2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
+    <!-- PROGRESS -->
+    <div class="progress-box">
+      <div class="progress-text">Soal 1 dari 50</div>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width:2%"></div>
       </div>
     </div>
 
-  </div>
+    <!-- QUESTION CARD -->
+    <div class="question-card">
+      <h2>Soal 1</h2>
+      <p>
+        Isi pertanyaan tampil di sini. Pastikan teks panjang tetap nyaman dibaca
+        dan responsif pada semua ukuran layar.
+      </p>
+
+      <div class="options">
+        <label class="option"><input type="radio" name="jawab"> Pilihan A</label>
+        <label class="option"><input type="radio" name="jawab"> Pilihan B</label>
+        <label class="option"><input type="radio" name="jawab"> Pilihan C</label>
+        <label class="option"><input type="radio" name="jawab"> Pilihan D</label>
+      </div>
+    </div>
+
+    <!-- NAV BUTTON -->
+    <div class="nav-buttons">
+      <button class="btn-outline">Sebelumnya</button>
+      <button class="btn-primary">Berikutnya</button>
+    </div>
+
+  </main>
+
+  <!-- NAVIGATION DESKTOP -->
+  <aside class="question-nav">
+    <h4>Navigasi</h4>
+    <div class="nav-grid">
+      <button class="nav-item active">1</button>
+      <button class="nav-item">2</button>
+      <button class="nav-item">3</button>
+      <button class="nav-item">4</button>
+      <button class="nav-item">5</button>
+    </div>
+  </aside>
+
 </div>
+
+<!-- NAVIGATION MOBILE -->
+<div class="question-nav-mobile">
+  <button class="nav-item active">1</button>
+  <button class="nav-item">2</button>
+  <button class="nav-item">3</button>
+  <button class="nav-item">4</button>
+  <button class="nav-item">5</button>
+</div>
+
+</body>
+</html>
