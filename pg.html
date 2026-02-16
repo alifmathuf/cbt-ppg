@@ -3,60 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ujian PG</title>
+<title>Ujian Pilihan Ganda</title>
 
 <link rel="stylesheet" href="css/inti.css">
-<link rel="stylesheet" href="css/pages.css">
 <link rel="stylesheet" href="css/ujian.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="layout">
+<!-- NAVBAR EXAM -->
+<header class="exam-navbar">
+  <div class="exam-title">Ujian Pilihan Ganda</div>
+  <div id="timer" class="timer-badge">120:00</div>
+</header>
 
-  <aside class="sidebar">
-    <h2>CBT</h2>
-    <nav>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="exam.html" class="active">Ujian</a>
-    </nav>
-  </aside>
+<!-- MAIN CONTENT -->
+<main class="exam-container">
 
-  <div class="main">
+  <!-- QUESTION CARD -->
+  <section class="question-card">
+    <div class="question-number">
+      Soal <span id="no">1</span> dari 50
+    </div>
 
-    <header class="navbar">
-      <button class="toggle-btn">☰</button>
-      <div class="nav-right">
-        <span id="timer" class="badge">120:00</span>
-      </div>
-    </header>
+    <div id="question" class="question-text">
+      Memuat soal...
+    </div>
 
-    <main class="content">
+    <div id="options" class="options"></div>
 
-      <div class="question-card">
-        <div class="question-number">Soal <span id="no">1</span></div>
-        <p id="question">Loading soal...</p>
+    <div class="nav-buttons">
+      <button onclick="prevSoal()">Sebelumnya</button>
+      <button onclick="nextSoal()">Berikutnya</button>
+    </div>
+  </section>
 
-        <div class="options" id="options"></div>
+  <!-- NUMBER GRID -->
+  <section class="number-grid" id="numberGrid"></section>
 
-        <div class="nav-buttons">
-          <button onclick="prevSoal()">Prev</button>
-          <button onclick="nextSoal()">Next</button>
-        </div>
-      </div>
+</main>
 
-      <div class="number-grid" id="numberGrid"></div>
-
-    </main>
-
-    <footer class="footer">CBT Web © 2026</footer>
-
-  </div>
-</div>
-
-<script src="js/inti.js"></script>
 <script src="js/ujian.js"></script>
-
 </body>
 </html>
