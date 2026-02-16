@@ -1,0 +1,340 @@
+/* ===================================
+   EXAM & CASE STYLE
+   PG + Studi Kasus
+=================================== */
+
+
+/* ================= PG EXAM ================= */
+
+/* CONTAINER */
+
+.exam-container{
+  width:100%;
+  max-width:900px;
+  margin:60px auto;
+  padding:28px;
+  background:var(--bg-card);
+  border-radius:var(--radius);
+  border:1px solid var(--border-soft);
+  box-shadow:var(--shadow-soft);
+}
+
+
+/* TOPBAR */
+
+.exam-topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+  font-size:14px;
+  color:var(--text-secondary);
+}
+
+
+/* PROGRESS */
+
+.exam-progress-bar{ margin-bottom:28px; }
+
+.progress-header{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
+  font-size:13px;
+  color:var(--text-secondary);
+}
+
+.timer{
+  font-weight:600;
+  font-size:14px;
+  color:var(--text-primary);
+  opacity:.85;
+}
+
+.progress-track{
+  width:100%;
+  height:8px;
+  background:var(--border-soft);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:var(--gradient-primary);
+  transition:width .3s ease;
+}
+
+
+/* LAYOUT */
+
+.exam-layout{
+  display:grid;
+  grid-template-columns:1fr 260px;
+  gap:28px;
+}
+
+.exam-main{ display:flex; flex-direction:column; }
+
+
+/* SIDEBAR */
+
+.exam-sidebar{
+  background:var(--bg-secondary);
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+  padding:18px;
+  height:fit-content;
+}
+
+.sidebar-title{
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:14px;
+  color:var(--text-secondary);
+  text-align:center;
+}
+
+
+/* NUMBER NAV */
+
+.number-nav{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+}
+
+.number-nav button{
+  padding:8px 0;
+  background:var(--bg-primary);
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border-soft);
+  font-weight:600;
+  font-size:13px;
+  cursor:pointer;
+  transition:var(--transition);
+}
+
+.number-nav button:hover{ background:var(--bg-hover); }
+
+.number-nav button.active{
+  background:var(--primary);
+  border-color:transparent;
+}
+
+.number-nav button.answered{
+  background:var(--success);
+  border-color:transparent;
+}
+
+
+/* QUESTION AREA */
+
+#questionBox{ line-height:1.7; }
+
+#questionBox h3{
+  margin-bottom:16px;
+  font-size:16px;
+}
+
+#questionBox p{
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+#questionBox label{
+  display:block;
+  padding:14px 16px;
+  margin-bottom:14px;
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius-sm);
+  cursor:pointer;
+  background:var(--bg-secondary);
+  transition:var(--transition);
+}
+
+#questionBox label:hover{
+  background:var(--bg-hover);
+  transform:translateY(-1px);
+}
+
+#questionBox input[type="radio"]{
+  margin-right:10px;
+}
+
+
+/* NAV BUTTON */
+
+.exam-nav{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-top:30px;
+}
+
+.exam-nav button{
+  min-width:130px;
+  padding:10px 16px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border-soft);
+  background:var(--bg-secondary);
+  cursor:pointer;
+  transition:var(--transition);
+}
+
+.exam-nav button:hover{ background:var(--bg-hover); }
+
+.exam-nav .btn-primary{
+  background:var(--primary);
+  border:none;
+  color:#fff;
+}
+
+.exam-nav .btn-primary:disabled{
+  background:var(--bg-hover);
+  color:var(--text-secondary);
+  cursor:not-allowed;
+}
+
+
+/* TIMER WARNING */
+
+.timer.warning{ color:var(--warning); }
+
+.timer.danger{
+  color:var(--danger);
+  animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:1;}
+  50%{opacity:.5;}
+  100%{opacity:1;}
+}
+
+
+/* ================= STUDI KASUS ================= */
+
+.case-container{
+  width:100%;
+  max-width:760px;
+  margin:60px auto;
+  padding:28px;
+  background:var(--bg-card);
+  border-radius:var(--radius);
+  border:1px solid var(--border-soft);
+  box-shadow:var(--shadow-soft);
+}
+
+/* header khusus case */
+.case-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:24px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--border-soft);
+}
+
+.case-timer{
+  font-size:16px;
+  font-weight:600;
+}
+
+.case-title{
+  font-size:15px;
+  font-weight:600;
+}
+
+.case-step{
+  font-size:13px;
+  color:var(--text-secondary);
+  margin-bottom:6px;
+}
+
+
+/* CONTENT */
+
+.case-content{ margin-bottom:26px; }
+
+.essay-box{
+  width:100%;
+  min-height:170px;
+  padding:14px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border-soft);
+  background:var(--bg-secondary);
+  font-size:14px;
+  line-height:1.6;
+  resize:vertical;
+}
+
+.essay-box:focus{
+  border-color:var(--primary);
+  background:var(--bg-hover);
+  outline:none;
+}
+
+.word-counter{
+  margin-top:8px;
+  text-align:right;
+  font-size:12px;
+  color:var(--text-muted);
+}
+
+
+/* FOOTER BUTTON */
+
+.case-footer{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin-top:30px;
+}
+
+.case-footer button{
+  min-width:170px;
+  padding:12px 18px;
+  border-radius:var(--radius-sm);
+  font-size:14px;
+  cursor:pointer;
+  border:none;
+  transition:var(--transition);
+}
+
+.case-btn-primary{
+  background:var(--primary);
+  color:#fff;
+}
+
+.case-btn-secondary{
+  background:var(--bg-secondary);
+  border:1px solid var(--border-soft);
+}
+
+.case-btn-secondary:hover{ background:var(--bg-hover); }
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:900px){
+  .exam-layout{ grid-template-columns:1fr; }
+  .exam-sidebar{ order:-1; }
+}
+
+@media (max-width:768px){
+
+  .exam-container,
+  .case-container{
+    margin:40px auto;
+    padding:22px;
+  }
+
+  .exam-nav button,
+  .case-footer button{
+    flex:1;
+    min-width:0;
+  }
+
+}
