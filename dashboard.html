@@ -5,80 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/core.css">
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/inti.css">
+  <link rel="stylesheet" href="css/pages.css">
   <link rel="stylesheet" href="css/dashboard.css">
-
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
 <div class="layout">
 
   <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="logo">CBT</div>
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">CBTWeb</div>
 
-    <nav class="menu">
+    <nav>
       <a href="dashboard.html" class="active">Dashboard</a>
-      <a href="riwayat.html">Riwayat</a>
+      <a href="exam.html">Mulai Ujian</a>
       <a href="statistik.html">Statistik</a>
-      <a href="leaderboard.html">Leaderboard</a>
+      <a href="peringkat.html">Peringkat</a>
+      <a href="riwayat.html">Riwayat</a>
+      <a href="hasil.html">Hasil</a>
     </nav>
   </aside>
 
-  <!-- MAIN -->
-  <main class="main">
+  <!-- MAIN AREA -->
+  <div class="main">
 
-    <!-- TOPBAR -->
-    <header class="topbar">
-      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <button id="menuToggle">☰</button>
+      <h1>Dashboard</h1>
 
-      <div>
-        <div id="greeting">Selamat datang,</div>
-        <div id="userInfo"></div>
+      <div class="user-menu">
+        <span>Admin</span>
+        <a href="login.html">Logout</a>
       </div>
-
-      <div id="avatar" class="avatar"></div>
     </header>
 
-    <!-- STEP EXAM SELECTOR -->
-    <section class="card">
+    <!-- CONTENT -->
+    <main class="content">
+      <h2>Selamat Datang 👋</h2>
+      <p>Ringkasan aktivitas ujian Anda.</p>
 
-      <div class="stepper">
+      <!-- nanti isi statistik ringkas -->
+    </main>
 
-        <div class="step active" data-step="1">Mapel</div>
-        <div class="step" data-step="2">Paket</div>
-        <div class="step" data-step="3">Tipe</div>
-        <div class="step" data-step="4">Mulai</div>
+    <!-- FOOTER -->
+    <footer class="footer">
+      © 2026 CBTWeb
+    </footer>
 
-      </div>
-
-      <div id="stepContent"></div>
-
-    </section>
-
-  </main>
+  </div>
 </div>
 
-<div id="sidebarOverlay"></div>
-
-<!-- Firebase -->
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-<script src="js/firebase-config.js"></script>
-
-<!-- Core & Dashboard Engine -->
-<script src="js/core.js"></script>
+<script src="js/inti.js"></script>
 <script src="js/dashboard.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  generateAvatar();
-  if (typeof lucide !== "undefined") lucide.createIcons();
-});
-</script>
-
 </body>
 </html>
