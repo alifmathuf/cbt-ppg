@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ujian PG</title>
+
+<link rel="stylesheet" href="css/inti.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/ujian.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <h2>CBT</h2>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="exam.html" class="active">Ujian</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <header class="navbar">
+      <button class="toggle-btn">☰</button>
+      <div class="nav-right">
+        <span id="timer" class="badge">120:00</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="question-card">
+        <div class="question-number">Soal <span id="no">1</span></div>
+        <p id="question">Loading soal...</p>
+
+        <div class="options" id="options"></div>
+
+        <div class="nav-buttons">
+          <button onclick="prevSoal()">Prev</button>
+          <button onclick="nextSoal()">Next</button>
+        </div>
+      </div>
+
+      <div class="number-grid" id="numberGrid"></div>
+
+    </main>
+
+    <footer class="footer">CBT Web © 2026</footer>
+
+  </div>
+</div>
+
+<script src="js/inti.js"></script>
+<script src="js/ujian.js"></script>
+
+</body>
+</html>
