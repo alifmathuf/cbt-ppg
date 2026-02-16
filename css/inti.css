@@ -1,221 +1,208 @@
-/* =========================
-   GOOGLE FONT
-========================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* ===============================
+   COLOR SYSTEM
+=============================== */
+:root{
 
-/* =========================
-   RESET DASAR
-========================= */
+  /* BACKGROUND */
+  --bg-primary:#071a12;
+  --bg-secondary:#0d2b22;
+  --bg-card:#0f3328;
+
+  /* ACCENT */
+  --accent:#1f7a63;
+  --accent-hover:#2fa98a;
+
+  /* TEXT (SOFT WHITE SYSTEM) */
+  --text-primary:#e6f2ee;
+  --text-secondary:#b7d4cc;
+  --text-soft:#9fbfb6;
+  --text-on-accent:#f4fbf8;
+
+  /* BORDER & SHADOW */
+  --border-soft:rgba(255,255,255,0.06);
+  --shadow-soft:0 4px 12px rgba(0,0,0,.18);
+  --shadow:0 10px 25px rgba(0,0,0,.25);
+
+  /* OTHER */
+  --radius:14px;
+  --transition:.25s ease;
+}
+
+
+/* ===============================
+   RESET
+=============================== */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-html, body{
-  height:100%;
-}
-
 body{
-  font-family:'Poppins', sans-serif;
-  background:#0f172a;
-  color:#e5e7eb;
-  -webkit-font-smoothing:antialiased;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,var(--bg-primary),#081f16);
+  color:var(--text-primary);
 }
 
-/* =========================
-   COLOR SYSTEM
-========================= */
-:root{
 
-:root{
-  --bg-primary:#071a12;      /* background utama */
-  --bg-secondary:#0d2b22;    /* navbar & sidebar */
-  --card:#0f3328;            /* card */
-  --accent:#1f7a63;          /* aksen utama */
-  --accent-soft:#2fa98a;     /* hover */
-  --text-light:#e8f5f1;
-  --shadow:0 10px 25px rgba(0,0,0,.25);
-  --transition:.2s;
+/* ===============================
+   LAYOUT
+=============================== */
+.layout{
+  display:flex;
+  min-height:100vh;
 }
 
-/* =========================
-   TYPOGRAPHY
-========================= */
-h1,h2,h3,h4{
-  font-weight:600;
-  color:#fff;
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
 }
 
-p{
-  color:var(--text-soft);
-  line-height:1.6;
-  font-size:14px;
+.content{
+  padding:24px;
 }
 
-a{
-  color:inherit;
+
+/* ===============================
+   SIDEBAR
+=============================== */
+.sidebar{
+  width:230px;
+  background:var(--bg-secondary);
+  padding:22px 18px;
+  border-right:1px solid var(--border-soft);
+}
+
+.sidebar h2{
+  margin-bottom:25px;
+  color:var(--text-primary);
+}
+
+.sidebar a{
+  display:block;
+  padding:10px 12px;
+  border-radius:10px;
+  color:var(--text-secondary);
   text-decoration:none;
-}
-
-/* =========================
-   BUTTON SYSTEM
-========================= */
-button{
-  font-family:inherit;
-  cursor:pointer;
-  border:none;
+  margin-bottom:6px;
   transition:var(--transition);
 }
 
+.sidebar a:hover{
+  background:var(--accent);
+  color:var(--text-on-accent);
+}
+
+
+/* ===============================
+   NAVBAR
+=============================== */
+.navbar{
+  background:var(--bg-secondary);
+  padding:14px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid var(--border-soft);
+}
+
+
+/* ===============================
+   AVATAR
+=============================== */
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:var(--accent);
+  color:var(--text-on-accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+}
+
+
+/* ===============================
+   CARD
+=============================== */
+.card{
+  background:var(--bg-card);
+  border-radius:var(--radius);
+  padding:22px;
+  border:1px solid var(--border-soft);
+  box-shadow:var(--shadow-soft);
+}
+
+
+/* ===============================
+   GRID
+=============================== */
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+
+/* ===============================
+   FORM
+=============================== */
+select{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  background:var(--bg-secondary);
+  color:var(--text-primary);
+}
+
+
+/* ===============================
+   RADIO
+=============================== */
+.radio-group{
+  display:flex;
+  gap:18px;
+  margin:12px 0 20px;
+}
+
+
+/* ===============================
+   BUTTON
+=============================== */
 .btn-primary{
   background:var(--accent);
-  color:#fff;
-  padding:12px 18px;
-  border-radius:var(--radius);
+  border:none;
+  color:var(--text-on-accent);
+  padding:11px 18px;
+  border-radius:10px;
+  cursor:pointer;
   font-weight:500;
+  transition:var(--transition);
+  box-shadow:var(--shadow);
 }
 
 .btn-primary:hover{
   background:var(--accent-hover);
 }
 
-/* =========================
-   FORM ELEMENT
-========================= */
-input, textarea, select{
-  width:100%;
-  padding:12px;
-  border-radius:var(--radius-sm);
-  border:none;
-  background:var(--blue-dark);
-  color:#fff;
-  font-family:inherit;
-}
 
-input:focus, textarea:focus{
-  outline:2px solid var(--accent);
-}
+/* ===============================
+   MOBILE
+=============================== */
+@media(max-width:900px){
 
-/* =========================
-   CARD GLOBAL
-========================= */
-.card{
-  background:var(--blue-soft);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-soft);
-  padding:20px;
-}
+  .sidebar{
+    display:none;
+  }
 
-/* =========================
-   SCROLLBAR PREMIUM
-========================= */
-::-webkit-scrollbar{
-  width:8px;
-}
+  .grid-2{
+    grid-template-columns:1fr;
+  }
 
-::-webkit-scrollbar-thumb{
-  background:var(--blue-light);
-  border-radius:20px;
-}
-
-/* =========================
-   AUTH LAYOUT
-========================= */
-
-.auth-container{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-.auth-card{
-  width:100%;
-  max-width:380px;
-  background:var(--blue-soft);
-  padding:28px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-soft);
-}
-
-.auth-card h2{
-  text-align:center;
-  margin-bottom:6px;
-}
-
-.subtitle{
-  text-align:center;
-  color:var(--text-soft);
-  font-size:14px;
-  margin-bottom:22px;
-}
-
-.form-group{
-  margin-bottom:16px;
-}
-
-.form-group label{
-  font-size:13px;
-  color:var(--text-soft);
-  display:block;
-  margin-bottom:6px;
-}
-
-.form-group input{
-  width:100%;
-  padding:12px;
-  border-radius:var(--radius);
-  border:none;
-  background:var(--bg-primary);
-  color:white;
-}
-
-.btn-primary{
-  width:100%;
-  padding:12px;
-  border:none;
-  border-radius:var(--radius);
-  background:var(--accent);
-  color:white;
-  font-weight:600;
-  margin-top:10px;
-  cursor:pointer;
-}
-
-
-   /* AUTH LAYOUT */
-
-.auth-container{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-}
-
-.auth-card{
-  width:100%;
-  max-width:380px;
-  background:var(--blue-soft);
-  padding:28px;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-soft);
-}
-
-.subtitle{
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.form-group{
-  margin-bottom:14px;
-}
-
-label{
-  font-size:13px;
-  color:var(--text-soft);
-  display:block;
-  margin-bottom:4px;
+  .content{
+    padding:18px;
+  }
 }
