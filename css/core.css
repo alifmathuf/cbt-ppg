@@ -1,34 +1,34 @@
 /* ===== ROOT VARIABLES ===== */
 :root{
 
-  /* ===== BRAND ===== */
-  --primary:#2563eb;
-  --primary-soft:#3b82f6;
-  --primary-dark:#1e40af;
+  /* ===== BRAND (PREMIUM SOFT BLUE) ===== */
+  --primary:#3b82f6;
+  --primary-soft:#60a5fa;
+  --primary-dark:#1e3a8a;
 
-  --success:#16a34a;
+  --success:#22c55e;
   --warning:#f59e0b;
-  --danger:#dc2626;
+  --danger:#ef4444;
 
-  /* ===== BACKGROUND (DARK BLUE THEME) ===== */
-  --bg-primary:#0f172a;     /* deep navy */
-  --bg-secondary:#111827;   /* panel bg */
-  --bg-card:#1e293b;        /* card surface */
-  --bg-hover:#1f2a44;       /* hover state */
+  /* ===== BACKGROUND (SOFT DARK BLUE) ===== */
+  --bg-primary:#0b1220;     /* deep soft navy */
+  --bg-secondary:#111a2e;   /* panel */
+  --bg-card:#16213a;        /* card */
+  --bg-hover:#1c2745;       /* hover */
 
-  /* ===== TEXT ===== */
-  --text-primary:#f9fafb;
-  --text-secondary:#cbd5e1;
+  /* ===== TEXT (SOFT WHITE) ===== */
+  --text-primary:#eef2ff;   /* soft white */
+  --text-secondary:#c7d2fe; /* soft blue gray */
   --text-muted:#94a3b8;
 
   /* ===== BORDER ===== */
-  --border-soft:#334155;
+  --border-soft:#24324d;
 
   /* ===== UI ===== */
   --radius:14px;
   --radius-sm:10px;
 
-  --shadow-soft:0 6px 18px rgba(0,0,0,.35);
+  --shadow-soft:0 8px 22px rgba(0,0,0,.35);
 
   --transition:all .25s ease;
 }
