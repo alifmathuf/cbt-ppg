@@ -1,16 +1,4 @@
 
-/* SESSION GUARD */
-  const publicPages = ["login.html", "index.html"];
-  const currentPage = window.location.pathname.split("/").pop();
-
-  if(!publicPages.includes(currentPage)){
-    if(localStorage.getItem("cbtLogin") !== "true"){
-      window.location.href = "login.html";
-      return; // hentikan eksekusi
-    }
-  }
-
-
 /* =========================
    GLOBAL UI CONTROLLER
 ========================= */
@@ -51,3 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
   
+ SESSION GUARD */
+  const publicPages = ["login.html", "index.html"];
+  const currentPage = window.location.pathname.split("/").pop();
+
+  if(!publicPages.includes(currentPage)){
+    if(localStorage.getItem("cbtLogin") !== "true"){
+      window.location.href = "login.html";
+      return; // hentikan eksekusi
+    }
+  }
