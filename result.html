@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Ujian</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">CBT</div>
+
+    <nav class="menu">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="riwayat.html">Riwayat</a>
+      <a href="statistik.html">Statistik</a>
+      <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+      <div>
+        <div id="greeting">Hasil Ujian</div>
+        <div id="userInfo"></div>
+      </div>
+
+      <div id="avatar" class="avatar"></div>
+    </header>
+
+    <!-- SCORE CARD -->
+    <section class="card center">
+
+      <h1 id="scoreText">0</h1>
+      <div id="statusBox" class="status-box"></div>
+
+      <canvas id="scoreChart" width="200" height="200"></canvas>
+
+      <div class="score-meta">
+        Benar: <b id="correctCount">0</b><br>
+        Nilai: <b id="finalScore">0</b>
+      </div>
+
+    </section>
+
+    <!-- STUDI KASUS RESULT -->
+    <section class="card">
+
+      <h3>Hasil Studi Kasus</h3>
+
+      <p><b>Topik:</b> <span id="caseTopic">-</span></p>
+      <p><b>Total Kata:</b> <span id="caseWords">0</span></p>
+      <p><b>Total Karakter:</b> <span id="caseChars">0</span></p>
+
+      <br>
+
+      <button class="btn-primary" onclick="exportPG()">Export PG PDF</button>
+      <button class="btn-outline" onclick="exportCase()">Export Studi Kasus PDF</button>
+
+    </section>
+
+  </main>
+</div>
+
+<div id="sidebarOverlay"></div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="js/firebase-config.js"></script>
+
+<!-- Core & Pages Engine -->
+<script src="js/core.js"></script>
+<script src="js/pages.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  generateAvatar();
+  if (typeof lucide !== "undefined") lucide.createIcons();
+});
+</script>
+
+</body>
+</html>
