@@ -4,7 +4,7 @@
 ================================= */
 
 
-/* ========= USER SESSION ========= */
+/* ========= USER STORAGE ========= */
 
 // ambil user dari localStorage
 function getUser() {
@@ -14,30 +14,6 @@ function getUser() {
 // simpan user
 function setUser(data) {
   localStorage.setItem("user", JSON.stringify(data));
-}
-
-// generate ID user sederhana
-function generateUserId() {
-  return "U" + Math.random().toString(36).substring(2, 9);
-}
-
-// login sederhana
-function login(name) {
-  const user = {
-    id: generateUserId(),
-    name: name || "Guest"
-  };
-  setUser(user);
-  return user;
-}
-
-// pastikan user tersedia
-function ensureUser() {
-  let user = getUser();
-  if (!user) {
-    user = login("Peserta");
-  }
-  return user;
 }
 
 
@@ -62,7 +38,9 @@ function generateAvatar(name) {
 }
 
 function applyAvatar(imgElementId) {
-  const user = ensureUser();
+  const user = getUser();
+  if (!user) return;
+
   const avatar = generateAvatar(user.name);
   const img = document.getElementById(imgElementId);
   if (img) img.src = avatar;
@@ -101,7 +79,6 @@ function setActiveMenu() {
 /* ========= SAFE DOM READY ========= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  ensureUser();
   initSidebarToggle();
   setActiveMenu();
 });
