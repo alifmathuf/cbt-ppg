@@ -1,0 +1,146 @@
+/* =================================
+   DASHBOARD LAYOUT & CONTENT
+================================= */
+
+/* ===== STEPPER NAVIGATION ===== */
+
+.stepper{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:24px;
+}
+
+.step{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  color:var(--text-secondary);
+}
+
+.step.active{
+  color:var(--accent);
+  font-weight:600;
+}
+
+.progress-line{
+  flex:1;
+  height:3px;
+  background:var(--border);
+  margin:0 8px;
+  border-radius:2px;
+  overflow:hidden;
+}
+
+.progress-line span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:var(--accent);
+  transition:0.3s;
+}
+
+#stepContent{
+  margin-top:20px;
+}
+
+
+/* ===== OPTION SELECTOR ===== */
+
+.option-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+
+.option-item{
+  background:var(--bg-secondary);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+  cursor:pointer;
+  transition:var(--transition);
+}
+
+.option-item:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+}
+
+.option-item.active{
+  border-color:var(--accent);
+  background:rgba(59,130,246,0.08);
+}
+
+
+/* ===== ACCORDION (PAKET / MODE) ===== */
+
+.accordion{
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+
+.accordion-header{
+  padding:14px 16px;
+  cursor:pointer;
+  background:var(--bg-secondary);
+  font-weight:600;
+}
+
+.accordion-content{
+  display:none;
+  padding:16px;
+  background:var(--bg-primary);
+}
+
+.accordion.open .accordion-content{
+  display:block;
+}
+
+
+/* ===== STATISTICS ===== */
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:16px;
+  margin-top:24px;
+}
+
+.stat-card{
+  background:var(--bg-secondary);
+  border-radius:var(--radius);
+  padding:18px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-soft);
+}
+
+.stat-value{
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+.stat-label{
+  font-size:13px;
+  color:var(--text-secondary);
+}
+
+
+/* ===== CHART CARD ===== */
+
+.chart-card{
+  margin-top:24px;
+  background:var(--bg-secondary);
+  border-radius:var(--radius);
+  padding:18px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-soft);
+}
+
+.chart-card canvas{
+  width:100% !important;
+  height:260px !important;
+}
