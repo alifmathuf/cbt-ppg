@@ -1,146 +1,30 @@
-/* ===============================
-   EXAM UI — CBT PROFESSIONAL
-=============================== */
+/* ===== EXAM NAVBAR ===== */
 
-/* ===== PAGE BASE ===== */
-
-body{
-  background:var(--bg-primary);
-}
-
-.content{
-  padding:20px;
-  max-width:900px;
-  margin:auto;
-}
-
-/* ===== QUESTION CARD ===== */
-
-.question-card{
+.exam-navbar{
   background:var(--card);
-  padding:28px;
-  border-radius:16px;
-  box-shadow:var(--shadow);
-  margin-bottom:20px;
-}
-
-.question-number{
-  font-size:14px;
-  opacity:.7;
-  margin-bottom:10px;
-}
-
-#question{
-  font-size:18px;
-  line-height:1.6;
-  color:#eaf1ff;
-}
-
-/* ===== OPTIONS ===== */
-
-.options{
-  margin-top:22px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.options button{
-  padding:14px 16px;
-  border-radius:10px;
-  border:none;
-  background:var(--bg-secondary);
-  color:#fff;
-  text-align:left;
-  cursor:pointer;
-  transition:var(--transition);
-  font-size:15px;
-}
-
-.options button:hover{
-  transform:translateY(-1px);
-  background:#1c3a6b;
-}
-
-.options button.active{
-  background:var(--accent);
-  color:#fff;
-  font-weight:500;
-}
-
-/* ===== NAVIGATION BUTTONS ===== */
-
-.nav-buttons{
+  padding:14px 20px;
   display:flex;
   justify-content:space-between;
-  margin-top:26px;
+  align-items:center;
+  box-shadow:var(--shadow);
 }
 
-.nav-buttons button{
-  padding:10px 22px;
-  border:none;
-  border-radius:8px;
+.exam-title{
+  font-weight:500;
+  letter-spacing:.3px;
+}
+
+.timer-badge{
   background:var(--accent);
-  color:#fff;
-  font-size:14px;
-  cursor:pointer;
-  transition:var(--transition);
-}
-
-.nav-buttons button:hover{
-  transform:translateY(-1px);
-  opacity:.9;
-}
-
-/* ===== NUMBER GRID ===== */
-
-.number-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(42px,1fr));
-  gap:10px;
-}
-
-.number-grid div{
-  background:var(--card);
-  padding:10px;
-  text-align:center;
+  padding:6px 14px;
   border-radius:8px;
-  cursor:pointer;
-  font-size:14px;
-  transition:var(--transition);
-}
-
-.number-grid div:hover{
-  background:#1c3a6b;
-}
-
-.number-grid .done{
-  background:var(--accent);
-  color:#fff;
-}
-
-/* ===== TIMER BADGE ===== */
-
-#timer{
   font-weight:600;
-  letter-spacing:.5px;
 }
 
-/* ===== MOBILE OPTIMIZATION ===== */
+/* ===== EXAM CONTAINER ===== */
 
-@media(max-width:768px){
-
-  .question-card{
-    padding:22px;
-  }
-
-  #question{
-    font-size:16px;
-  }
-
-  .options button{
-    font-size:14px;
-    padding:12px 14px;
-  }
-
+.exam-container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
