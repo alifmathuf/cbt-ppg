@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Jawaban</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">CBT</div>
+
+    <nav class="menu">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="riwayat.html">Riwayat</a>
+      <a href="statistik.html">Statistik</a>
+      <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+      <div>
+        <div id="greeting">Review Jawaban</div>
+        <div id="userInfo"></div>
+      </div>
+
+      <div id="avatar" class="avatar"></div>
+    </header>
+
+    <!-- REVIEW LIST -->
+    <section class="card">
+
+      <h2>Detail Jawaban</h2>
+      <div id="reviewContainer"></div>
+
+      <br>
+
+      <button class="btn-primary" onclick="window.location.href='dashboard.html'">
+        Kembali ke Dashboard
+      </button>
+
+    </section>
+
+  </main>
+</div>
+
+<div id="sidebarOverlay"></div>
+
+<!-- Core & Pages Engine -->
+<script src="js/core.js"></script>
+<script src="js/pages.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  generateAvatar();
+
+  const container = document.getElementById("reviewContainer");
+  const review = JSON.parse(localStorage.getItem("reviewData")) || [];
+
+  if(review.length === 0){
+    container.innerHTML = "<p>Tidak ada data review.</p>";
+    return;
+  }
+
+  review.forEach((item, i) => {
+
+    const status = item.user === item.correct
+      ? '<span style="color:var(--success)">BENAR</span>'
+      : '<span style="color:var(--danger)">SALAH</span>';
+
+    container.innerHTML += `
+      <div class="review-item">
+        <p><b>${i+1}. ${item.q}</b></p>
+        <p>Jawaban Anda: ${item.user}</p>
+        <p>Jawaban Benar: ${item.correct}</p>
+        <p>Status: ${status}</p>
+      </div>
+      <hr>
+    `;
+  });
+
+});
+</script>
+
+</body>
+</html>
