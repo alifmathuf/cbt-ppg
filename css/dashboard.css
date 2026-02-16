@@ -1,0 +1,78 @@
+/* =========================
+   DASHBOARD COMPONENTS
+========================= */
+
+/* grid ringkasan */
+.summary-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap:16px;
+  margin-top:20px;
+}
+
+/* card statistik */
+.card{
+  background:var(--blue-soft);
+  padding:18px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-soft);
+  transition:var(--transition);
+  position:relative;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+}
+
+/* judul kecil */
+.card-title{
+  font-size:13px;
+  color:var(--text-soft);
+  margin-bottom:6px;
+}
+
+/* angka utama */
+.card-value{
+  font-size:26px;
+  font-weight:600;
+}
+
+/* badge kecil */
+.badge{
+  position:absolute;
+  top:14px;
+  right:14px;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.08);
+}
+
+/* grafik placeholder */
+.chart-box{
+  margin-top:24px;
+  background:var(--blue-soft);
+  border-radius:var(--radius);
+  padding:20px;
+  min-height:260px;
+}
+
+/* aktivitas terbaru */
+.activity{
+  margin-top:24px;
+  background:var(--blue-soft);
+  padding:20px;
+  border-radius:var(--radius);
+}
+
+.activity-item{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  font-size:14px;
+}
+
+.activity-item:last-child{
+  border-bottom:none;
+}
