@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilih Ujian</title>
+
+  <link rel="stylesheet" href="css/inti.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">CBTWeb</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="#">Mulai Ujian</a>
+      <a href="riwayat.html">Riwayat</a>
+      <a href="statistik.html">Statistik</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <button id="menuToggle">☰</button>
+      <h1>Pilih Ujian</h1>
+      <div class="user-menu">
+        <span>Admin</span>
+        <a href="#" id="logoutBtn" title="Logout">⎋</a>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <div class="card">
+        <h3>Pilih Mata Pelajaran</h3>
+        <select id="mapel">
+          <option>Aqidah</option>
+          <option>Qurdist</option>
+          <option>Fiqih</option>
+          <option>SKI</option>
+          <option>PAI</option>
+          <option>Bahasa Arab</option>
+          <option>GKRA</option>
+          <option>GKMI</option>
+        </select>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3>Pilih Paket Soal</h3>
+        <select id="paket">
+          <option>Paket 1</option>
+          <option>Paket 2</option>
+          <option>Paket 3</option>
+          <option>Paket 4</option>
+          <option>Paket 5</option>
+        </select>
+      </div>
+
+      <div class="card" style="margin-top:16px;">
+        <h3>Tipe Ujian</h3>
+        <select id="tipe">
+          <option value="pg">Pilihan Ganda</option>
+          <option value="kasus">Studi Kasus</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" style="margin-top:20px;" onclick="mulaiUjian()">
+        Mulai Ujian
+      </button>
+
+    </main>
+
+    <div class="footer">
+      CBTWeb © 2026
+    </div>
+
+  </div>
+</div>
+
+<script src="js/inti.js"></script>
+<script src="js/pages.js"></script>
+</body>
+</html>
