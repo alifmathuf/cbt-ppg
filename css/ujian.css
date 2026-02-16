@@ -1,0 +1,18 @@
+.exam-box{
+  max-width:420px;
+  background:var(--card);
+  padding:30px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.exam-box select{
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  background:var(--bg-secondary);
+  color:white;
+}
