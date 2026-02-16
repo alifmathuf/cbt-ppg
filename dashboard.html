@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">CBT</div>
+
+    <nav class="menu">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="riwayat.html">Riwayat</a>
+      <a href="statistik.html">Statistik</a>
+      <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+
+      <div>
+        <div id="greeting">Selamat datang,</div>
+        <div id="userInfo"></div>
+      </div>
+
+      <div id="avatar" class="avatar"></div>
+    </header>
+
+    <!-- STEP EXAM SELECTOR -->
+    <section class="card">
+
+      <div class="stepper">
+
+        <div class="step active" data-step="1">Mapel</div>
+        <div class="step" data-step="2">Paket</div>
+        <div class="step" data-step="3">Tipe</div>
+        <div class="step" data-step="4">Mulai</div>
+
+      </div>
+
+      <div id="stepContent"></div>
+
+    </section>
+
+  </main>
+</div>
+
+<div id="sidebarOverlay"></div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="js/firebase-config.js"></script>
+
+<!-- Core & Dashboard Engine -->
+<script src="js/core.js"></script>
+<script src="js/dashboard.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  generateAvatar();
+  if (typeof lucide !== "undefined") lucide.createIcons();
+});
+</script>
+
+</body>
+</html>
