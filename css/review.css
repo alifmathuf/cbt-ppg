@@ -1,0 +1,90 @@
+/* ================= REVIEW PAGE ================= */
+
+.review-container{
+  max-width:1100px;
+  margin:40px auto;
+  padding:24px;
+}
+
+.review-container h2{
+  margin-bottom:30px;
+  color:var(--text-primary);
+}
+
+
+/* ===== TABLE ===== */
+
+.review-table{
+  width:100%;
+  border-collapse:collapse;
+  background:var(--bg-card);
+  border:1px solid var(--border-soft);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-soft);
+}
+
+.review-table thead{
+  background:var(--bg-secondary);
+  color:var(--text-primary);
+}
+
+.review-table th{
+  padding:14px;
+  text-align:left;
+  font-weight:600;
+  font-size:14px;
+}
+
+.review-table td{
+  padding:14px;
+  border-bottom:1px solid var(--border-soft);
+  vertical-align:top;
+  color:var(--text-secondary);
+  font-size:14px;
+}
+
+.review-table tr:last-child td{
+  border-bottom:none;
+}
+
+.review-table tr:hover{
+  background:var(--bg-hover);
+}
+
+
+/* ===== STATUS ICON ===== */
+
+.correct{
+  color:var(--success);
+  font-size:18px;
+  font-weight:600;
+}
+
+.wrong{
+  color:var(--danger);
+  font-size:18px;
+  font-weight:600;
+}
+
+
+/* ===== BUTTON ===== */
+
+.review-footer{
+  margin-top:24px;
+  text-align:right;
+}
+
+.review-footer button{
+  padding:10px 18px;
+  border-radius:var(--radius-sm);
+  border:1px solid var(--border-soft);
+  background:var(--bg-secondary);
+  color:var(--text-primary);
+  cursor:pointer;
+  transition:var(--transition);
+}
+
+.review-footer button:hover{
+  background:var(--bg-hover);
+}
