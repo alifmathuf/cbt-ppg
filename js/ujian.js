@@ -65,15 +65,20 @@ function renderGrid(){
   soal.forEach((_,i)=>{
     const box = document.createElement("div");
     box.innerText = i+1;
+
     if(jawaban[i] !== undefined) box.classList.add("done");
-    box.onclick = ()=>{ current=i; tampilSoal(); }
+    if(i === current) box.classList.add("active");
+
+    box.onclick = ()=>{
+      current=i;
+      tampilSoal();
+    };
+
     grid.appendChild(box);
   });
+
+  updateProgress();
 }
-
-tampilSoal();
-renderGrid();
-
 
 // TIMER 120 menit
 let waktu = 120*60;
