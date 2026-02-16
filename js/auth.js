@@ -7,12 +7,9 @@ function login(){
     return;
   }
 
-  const user = {
-    nama,
-    kelas
-  };
-
-  localStorage.setItem("cbtUser", JSON.stringify(user));
-
+  Auth.login(nama, kelas);
   window.location.href = "dashboard.html";
 }
+
+// ⬇⬇ TAMBAHKAN INI
+window.login = login;
